@@ -9,14 +9,15 @@ public class Wolf {
 	public String getGender() {
 		return gender;
 	}
+
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
 
-
 	public String getName() {
 		return  name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -24,6 +25,7 @@ public class Wolf {
 	public float getWeigth() {
 		return weigth;
 	}
+
 	public void setWeigth(float weigth) {
 		this.weigth = weigth;
 	}
@@ -31,21 +33,21 @@ public class Wolf {
 	public int getAge() {
 		return age;
 	}
+
 	public void setAge(int age) {
 		if(age > 8) {
 			System.out.println("Некорректный возраст");
 		}
 		this.age = age;
-		
 	}
 
 	public String getColor() {
 		return color;
 	}
+
 	public void setColor(String color) {
 		this.color = color;
 	}
-
 
 	public void go() {
 		System.out.println("Иди спокойно!");
@@ -66,5 +68,4 @@ public class Wolf {
 	public void hunt() {
 		System.out.println("Добудь себе еды");
 	}
-
 }

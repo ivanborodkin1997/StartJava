@@ -17,7 +17,6 @@ public class WolfTest {
 		wolfOne.setColor("White");
 		System.out.println("newColor = " + wolfOne.getColor());
 
-
 		wolfOne.go();
 		wolfOne.sit();
 		wolfOne.run();
