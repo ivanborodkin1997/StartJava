@@ -1,14 +1,18 @@
-
+import java.util.Scanner;
 
 public class CalculatorTest {
 	public static void main(String[] args) {
-
 		Calculator calculator = new Calculator();
+		Scanner scanner = new Scanner(System.in);
 		System.out.print("Введите первое число : ");
-		System.out.println(calculator.getFirstNumber());
+		int firstNumber = scanner.nextInt();
 		System.out.print("Введите знак математической операции : ");
-		System.out.println(calculator.getSign());
+		char sign = scanner.next().charAt(0);
 		System.out.print("Введите второе число : ");
-		System.out.println(calculator.getSecondNumber());
+		int secondNumber = scanner.nextInt();
+		System.out.print("Результат вычисления : ");
+		int resault = 0;
+
+		System.out.println(calculator.calculate(firstNumber,secondNumber,sign,resault));
 	}
 }
