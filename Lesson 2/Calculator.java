@@ -1,26 +1,26 @@
 
 
 public class Calculator {
-	public int calculate(int firstNumber, int secondNumber, char sign, int resault) {
+	public int calculate(int firstNumber, int secondNumber, char sign, int result) {
 			switch (sign) {
-			case '+' : resault = (firstNumber + secondNumber);
+			case '+' : result = (firstNumber + secondNumber);
 			break;
-			case '-' : resault = (firstNumber - secondNumber);
+			case '-' : result = (firstNumber - secondNumber);
 			break;
-			case '*' : resault = (firstNumber * secondNumber);
+			case '*' : result = (firstNumber * secondNumber);
 			break;
-			case '/' : resault = (firstNumber / secondNumber);
+			case '/' : result = (firstNumber / secondNumber);
 			break;
 			case '^' : int numberInDegree = 1;
 				for(int i = 0; i < secondNumber; i++) {
 					numberInDegree *= firstNumber;
 				}
-				resault = numberInDegree; 
+				result = numberInDegree; 
 			break;   	
-			case '%': resault = (firstNumber % secondNumber);
+			case '%': result = (firstNumber % secondNumber);
 			break;
 		}
-		return resault;
+		return result;
 	}
 	
 }
