@@ -1,6 +1,6 @@
 public class Calculator {
 	public int calculate(int firstNumber, int secondNumber, char sign) {
-	int result = 0;
+		int result = 0;
 		switch (sign) {
 			case '+' : 
 				result = (firstNumber + secondNumber);
@@ -14,7 +14,8 @@ public class Calculator {
 			case '/' : 
 				result = (firstNumber / secondNumber);
 				break;
-			case '^' : int numberInDegree = 1;
+			case '^' : 
+				int numberInDegree = 1;
 				for(int i = 0; i < secondNumber; i++) {
 					numberInDegree *= firstNumber;
 				}
