@@ -1,13 +1,13 @@
+import java.util.Scanner;
+
 public class Player {
-	private String name;
-	private int number;
+	
+	String name;
+	int number;
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
+	public Player(String a) {
+		name = a;
+		
 	}
 
 	public int getNumber() {
