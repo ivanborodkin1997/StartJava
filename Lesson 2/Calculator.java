@@ -24,10 +24,8 @@ public class Calculator {
 			case '%': 
 				result = (firstNumber % secondNumber);
 				break;
-			}
+		}
 		return result;
 	}
 	
 }
-
-

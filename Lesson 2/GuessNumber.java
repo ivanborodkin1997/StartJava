@@ -2,10 +2,12 @@ import java.util.Scanner;
 
 public class GuessNumber {
 	Scanner scanner = new Scanner(System.in);
-	int computerNumber = (int) (1+ Math.random()*100);
-	void play( Player playerOne, Player playerTwo) {
-		do{
-
+	private int computerNumber = (int) (Math.random()*101);
+	Player playerOne;
+    Player playerTwo;
+    
+	GuessNumber( Player playerOne, Player playerTwo) {
+		do {
 			System.out.print(playerOne.name + " введите число: ");
 			playerOne.setNumber(scanner.nextInt());
 			if(computerNumber > playerOne.getNumber()) {
@@ -16,6 +18,7 @@ public class GuessNumber {
 				System.out.println("Ура!!!" + playerOne.name + " Вы угадали");
 				break;
 			} 
+
 			System.out.print(playerTwo.name + " введите число: ");
 			playerTwo.setNumber(scanner.nextInt());
 			if(computerNumber > playerTwo.getNumber()) {

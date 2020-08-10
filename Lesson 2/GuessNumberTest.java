@@ -4,20 +4,20 @@ public class GuessNumberTest {
 	public static void main(String[] args) {
 		String yesOrNo;
 
-		do{
-		Scanner scanner = new Scanner(System.in);
-		System.out.print("Первый игрок - введите своё имя : ");
-		Player playerOne = new Player(scanner.nextLine());
-		System.out.print("Второй игрок - введите своё имя : ");
-		Player playerTwo = new Player(scanner.nextLine());
+		do {
+			Scanner scanner = new Scanner(System.in);
+			System.out.print("Первый игрок - введите своё имя : ");
+			Player playerOne = new Player(scanner.nextLine());
+			System.out.print("Второй игрок - введите своё имя : ");
+			Player playerTwo = new Player(scanner.nextLine());
 		
-		GuessNumber game = new GuessNumber();
-		game.play(playerOne,playerTwo);
-		System.out.println();
+			new GuessNumber(playerOne,playerTwo);
+			
+			System.out.println();
 			do{
 				System.out.print("Хотите продолжить? [да/нет] : ");
 				yesOrNo = scanner.nextLine();
-			} while(!"yes".equalsIgnoreCase(yesOrNo) && !"no".equalsIgnoreCase(yesOrNo));
-		} while("yes".equalsIgnoreCase(yesOrNo));
+			} while(!yesOrNo.equalsIgnoreCase("yes") && !yesOrNo.equalsIgnoreCase("no"));
+		} while(yesOrNo.equalsIgnoreCase("yes"));
 	}
 }
