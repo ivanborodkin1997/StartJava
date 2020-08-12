@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class GuessNumberTest {
 	public static void main(String[] args) {
-		String yesOrNo;
+		String playerAnswer;
 
 		do {
 			Scanner scanner = new Scanner(System.in);
@@ -11,13 +11,14 @@ public class GuessNumberTest {
 			System.out.print("Второй игрок - введите своё имя : ");
 			Player playerTwo = new Player(scanner.nextLine());
 		
-			new GuessNumber(playerOne,playerTwo);
-			
+			GuessNumber game = new GuessNumber(playerOne,playerTwo);
+			game.play();
+
 			System.out.println();
-			do{
+			do {
 				System.out.print("Хотите продолжить? [да/нет] : ");
-				yesOrNo = scanner.nextLine();
-			} while(!yesOrNo.equalsIgnoreCase("yes") && !yesOrNo.equalsIgnoreCase("no"));
-		} while(yesOrNo.equalsIgnoreCase("yes"));
+				playerAnswer = scanner.nextLine();
+			} while(!playerAnswer.equalsIgnoreCase("yes") && !playerAnswer.equalsIgnoreCase("no"));
+		} while(playerAnswer.equalsIgnoreCase("yes"));
 	}
 }

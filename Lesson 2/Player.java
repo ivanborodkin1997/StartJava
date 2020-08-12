@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Player {
 	
-	String name;
+	private String name;
 	private int number;
 
 	public Player(String name) {
@@ -15,5 +15,13 @@ public class Player {
 
 	public void setNumber(int number) {
 		this.number = number;
+	}
+
+	public String getName(){
+		return name;
+	}
+
+	public void setName(String name){
+		this.name = name;
 	}
 }
