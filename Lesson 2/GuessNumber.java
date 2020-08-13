@@ -10,8 +10,8 @@ public class GuessNumber {
 		this.playerOne = playerOne;
 		this.playerTwo = playerTwo;
 	}
-		void play () {
-			do {
+	public void play() {
+		do {
 			System.out.print(playerOne.getName() + " введите число: ");
 			playerOne.setNumber(scanner.nextInt());
 			if(computerNumber > playerOne.getNumber()) {

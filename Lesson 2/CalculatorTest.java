@@ -18,7 +18,7 @@ public class CalculatorTest {
 			System.out.println(calculator.calculate(firstNumber, secondNumber, sign));
 			System.out.println();
 			scanner.nextLine();
-			do{
+			do {
 				System.out.print("Хотите продолжить? [да/нет] : ");
 				yesOrNo = scanner.nextLine();
 		 	} while(yesOrNo.equalsIgnoreCase(!"yes") && !yesOrNo.equalsIgnoreCase(!"no"));
