@@ -1,28 +1,40 @@
 package com.startjava.lesson_2_3_4.calculator;
 
 public class Calculator {
-	public int calculate(int[] numbers, String sign) {
+	int result;
+	int[] numbers = new int[2];
+	char sign;
+
+
+	public void srcExpre(String srcExpression){
+		String[] array = srcExpression.split(" ");
+		numbers[0] = Integer.parseInt(array[0]);
+		sign = array[1].charAt(0);
+		numbers[1] = Integer.parseInt(array[2]);
+	}
+
+	public int calculate() {
 		switch (sign) {
-			case "+" :
-				numbers[2] = Math.addExact (numbers[0], numbers[1]);
+			case '+' :
+				result = Math.addExact (numbers[0], numbers[1]);
 				break;
-			case "-" :
-				numbers[2]= Math.subtractExact(numbers[0],numbers[1]);
+			case '-' :
+				result = Math.subtractExact(numbers[0], numbers[1]);
 				break;
-			case "*" :
-				numbers[2] = Math.multiplyExact(numbers[0], numbers[1]);
+			case '*' :
+				result = Math.multiplyExact(numbers[0], numbers[1]);
 				break;
-			case "/" :
-				numbers[2] = Math.floorDiv (numbers[0],numbers[1]);
+			case '/' :
+				result = Math.floorDiv (numbers[0], numbers[1]);
 				break;
-			case "^" :
-				numbers[2] = (int) Math.pow (numbers[0],numbers[1]);
+			case '^' :
+				result = (int) Math.pow (numbers[0], numbers[1]);
 				break;   	
-			case "%":
-				numbers[2]= (numbers[0] % numbers[1]);
+			case '%':
+				result = (numbers[0] % numbers[1]);
 				break;
 		}
-		return numbers[2];
+		return result;
 	}
 	
 }

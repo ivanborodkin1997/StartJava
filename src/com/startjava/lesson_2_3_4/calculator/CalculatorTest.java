@@ -7,7 +7,7 @@ public class CalculatorTest {
 	public static void main(String[] args) {
 		String yesOrNo;
 		System.out.println("Калькулятор запущен!");
-		int[] numbers = new int[3];
+
 
 		
 		do {
@@ -15,16 +15,10 @@ public class CalculatorTest {
 			Scanner scanner = new Scanner(System.in);
 
 			System.out.print("Введите математическое выражение: ");
-			String example = scanner.nextLine();
-			String[] array = example.split(" ");
-			numbers[0] = Integer.parseInt(array[0]);
-			String sign = array[1];
-			numbers[1] = Integer.parseInt(array[2]);
-
+			String srcExpression = scanner.nextLine();
+			calculator.srcExpre(srcExpression);
 			System.out.print("Результат вычисления : ");
-
-			System.out.println(calculator.calculate(numbers, sign));
-
+			System.out.println(calculator.calculate());
 			do {
 				System.out.print("Хотите продолжить? [да/нет] : ");
 				yesOrNo = scanner.nextLine();
