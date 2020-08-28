@@ -3,17 +3,12 @@ package com.startjava.lesson_2_3_4.calculator;
 import java.util.Scanner;
 
 public class CalculatorTest {
-
 	public static void main(String[] args) {
 		String yesOrNo;
 		System.out.println("Калькулятор запущен!");
-
-
-		
 		do {
 			Calculator calculator = new Calculator();
 			Scanner scanner = new Scanner(System.in);
-
 			System.out.print("Введите математическое выражение: ");
 			String srcExpression = scanner.nextLine();
 			calculator.srcExpre(srcExpression);
