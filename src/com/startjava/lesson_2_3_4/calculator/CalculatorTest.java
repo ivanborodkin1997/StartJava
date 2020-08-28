@@ -4,21 +4,21 @@ import java.util.Scanner;
 
 public class CalculatorTest {
 	public static void main(String[] args) {
-		String yesOrNo;
+		String answer;
 		System.out.println("Калькулятор запущен!");
 		do {
 			Calculator calculator = new Calculator();
 			Scanner scanner = new Scanner(System.in);
 			System.out.print("Введите математическое выражение: ");
 			String srcExpression = scanner.nextLine();
-			calculator.srcExpre(srcExpression);
+			calculator.partition(srcExpression); // метод разделения
 			System.out.print("Результат вычисления : ");
-			System.out.println(calculator.calculate());
+			System.out.println(calculator.calculate()); // метод расчета калькулятора
 			do {
 				System.out.print("Хотите продолжить? [да/нет] : ");
-				yesOrNo = scanner.nextLine();
+				answer = scanner.nextLine();
 				System.out.println();
-		 	} while(!yesOrNo.equalsIgnoreCase("yes") && !yesOrNo.equalsIgnoreCase("no"));
-		} while(yesOrNo.equalsIgnoreCase("yes"));
+		 	} while(!answer.equalsIgnoreCase("yes") && !answer.equalsIgnoreCase("no"));
+		} while(answer.equalsIgnoreCase("yes"));
 	}
 }		
