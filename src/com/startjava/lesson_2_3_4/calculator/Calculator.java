@@ -5,7 +5,7 @@ public class Calculator {
 	int[] numbers = new int[2];
 	char sign;
 
-	public void srcExpre(String srcExpression){
+	public void srcExpre(String srcExpression) {
 		String[] array = srcExpression.split(" ");
 		numbers[0] = Integer.parseInt(array[0]);
 		sign = array[1].charAt(0);
