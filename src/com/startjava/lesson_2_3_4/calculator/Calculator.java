@@ -1,36 +1,37 @@
 package com.startjava.lesson_2_3_4.calculator;
 
 public class Calculator {
-	int result;
-	int[] numbers = new int[2];
-	char sign;
+	private int result;
+	private int numberOne;
+	private int numberTwo;
+	private char sign;
 
 	public void partition(String srcExpression) {
 		String[] array = srcExpression.split(" ");
-		numbers[0] = Integer.parseInt(array[0]);
+		numberOne= Integer.parseInt(array[0]);
 		sign = array[1].charAt(0);
-		numbers[1] = Integer.parseInt(array[2]);
+		numberTwo = Integer.parseInt(array[2]);
 	}
 
 	public int calculate() {
 		switch (sign) {
 			case '+' :
-				result = Math.addExact (numbers[0], numbers[1]);
+				result = Math.addExact (numberOne, numberTwo);
 				break;
 			case '-' :
-				result = Math.subtractExact(numbers[0], numbers[1]);
+				result = Math.subtractExact(numberOne, numberTwo);
 				break;
 			case '*' :
-				result = Math.multiplyExact(numbers[0], numbers[1]);
+				result = Math.multiplyExact(numberOne, numberTwo);
 				break;
 			case '/' :
-				result = Math.floorDiv (numbers[0], numbers[1]);
+				result = Math.floorDiv (numberOne, numberTwo);
 				break;
 			case '^' :
-				result = (int) Math.pow (numbers[0], numbers[1]);
+				result = (int) Math.pow (numberOne, numberTwo);
 				break;   	
 			case '%':
-				result = (numbers[0] % numbers[1]);
+				result = (numberOne % numberTwo);
 				break;
 		}
 		return result;

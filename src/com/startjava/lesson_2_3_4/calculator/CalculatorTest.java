@@ -12,8 +12,7 @@ public class CalculatorTest {
 			System.out.print("Введите математическое выражение: ");
 			String srcExpression = scanner.nextLine();
 			calculator.partition(srcExpression); // метод разделения
-			System.out.print("Результат вычисления : ");
-			System.out.println(calculator.calculate()); // метод расчета калькулятора
+			System.out.println("Результат вычисления : " + calculator.calculate()); // метод расчета калькулятора
 			do {
 				System.out.print("Хотите продолжить? [да/нет] : ");
 				answer = scanner.nextLine();
