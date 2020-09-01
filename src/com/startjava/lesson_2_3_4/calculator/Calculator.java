@@ -6,14 +6,14 @@ public class Calculator {
 	private int numberTwo;
 	private char sign;
 
-	public void partition(String srcExpression) {
-		String[] array = srcExpression.split(" ");
+	public void expression(String[] array) {
 		numberOne= Integer.parseInt(array[0]);
 		sign = array[1].charAt(0);
 		numberTwo = Integer.parseInt(array[2]);
 	}
 
-	public int calculate() {
+	public int  calculate( String[] array) {
+		expression(array);
 		switch (sign) {
 			case '+' :
 				result = Math.addExact (numberOne, numberTwo);
@@ -36,5 +36,4 @@ public class Calculator {
 		}
 		return result;
 	}
-	
 }

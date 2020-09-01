@@ -4,19 +4,19 @@ import java.util.Scanner;
 
 public class CalculatorTest {
 	public static void main(String[] args) {
+		Calculator calculator = new Calculator();
 		String answer;
 		System.out.println("Калькулятор запущен!");
+		System.out.println(" ");
 		do {
-			Calculator calculator = new Calculator();
 			Scanner scanner = new Scanner(System.in);
 			System.out.print("Введите математическое выражение: ");
 			String srcExpression = scanner.nextLine();
-			calculator.partition(srcExpression); // метод разделения
-			System.out.println("Результат вычисления : " + calculator.calculate()); // метод расчета калькулятора
+			String[] array = srcExpression.split(" ");
+			System.out.println("Результат вычисления : " + calculator.calculate(array)); // метод расчета калькулятора
 			do {
 				System.out.print("Хотите продолжить? [да/нет] : ");
 				answer = scanner.nextLine();
-				System.out.println();
 		 	} while(!answer.equalsIgnoreCase("yes") && !answer.equalsIgnoreCase("no"));
 		} while(answer.equalsIgnoreCase("yes"));
 	}
