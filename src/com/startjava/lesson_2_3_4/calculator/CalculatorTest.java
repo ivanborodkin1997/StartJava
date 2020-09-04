@@ -4,16 +4,16 @@ import java.util.Scanner;
 
 public class CalculatorTest {
 	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
 		Calculator calculator = new Calculator();
 		String answer;
-		System.out.println("Калькулятор запущен!");
-		System.out.println(" ");
+		System.out.println("Калькулятор запущен!\n");
+
 		do {
-			Scanner scanner = new Scanner(System.in);
 			System.out.print("Введите математическое выражение: ");
 			String srcExpression = scanner.nextLine();
-			String[] array = srcExpression.split(" ");
-			System.out.println("Результат вычисления : " + calculator.calculate(array)); // метод расчета калькулятора
+			String[] splitExpression = srcExpression.split(" ");
+			System.out.println("Результат вычисления : " + calculator.calculate(splitExpression)); // метод расчета калькулятора
 			do {
 				System.out.print("Хотите продолжить? [да/нет] : ");
 				answer = scanner.nextLine();

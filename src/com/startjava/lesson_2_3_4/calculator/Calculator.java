@@ -1,39 +1,32 @@
 package com.startjava.lesson_2_3_4.calculator;
 
 public class Calculator {
-	private int result;
 	private int numberOne;
 	private int numberTwo;
 	private char sign;
 
-	public void expression(String[] array) {
-		numberOne= Integer.parseInt(array[0]);
-		sign = array[1].charAt(0);
-		numberTwo = Integer.parseInt(array[2]);
+	public void expression(String[] splitExpression ){
+		numberOne = Integer.parseInt(splitExpression[0]);
+		sign = splitExpression[1].charAt(0);
+		numberTwo = Integer.parseInt(splitExpression[2]);
 	}
 
-	public int  calculate( String[] array) {
-		expression(array);
+	public int  calculate(String[] splitExpression){
+		expression(splitExpression);
 		switch (sign) {
 			case '+' :
-				result = Math.addExact (numberOne, numberTwo);
-				break;
+				return Math.addExact(numberOne, numberTwo);
 			case '-' :
-				result = Math.subtractExact(numberOne, numberTwo);
-				break;
+				return Math.subtractExact(numberOne, numberTwo);
 			case '*' :
-				result = Math.multiplyExact(numberOne, numberTwo);
-				break;
+				return Math.multiplyExact(numberOne, numberTwo);
 			case '/' :
-				result = Math.floorDiv (numberOne, numberTwo);
-				break;
+				return  Math.floorDiv (numberOne, numberTwo);
 			case '^' :
-				result = (int) Math.pow (numberOne, numberTwo);
-				break;   	
+				return (int) Math.pow (numberOne, numberTwo);
 			case '%':
-				result = (numberOne % numberTwo);
-				break;
+				return (int) Math.IEEEremainder(numberOne, numberTwo);
 		}
-		return result;
+		return 0;
 	}
 }
