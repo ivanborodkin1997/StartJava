@@ -5,14 +5,14 @@ public class Calculator {
 	private int numberTwo;
 	private char sign;
 
-	public void expression(String[] splitExpression ){
+	public void splitString(String[] splitExpression ) {
 		numberOne = Integer.parseInt(splitExpression[0]);
 		sign = splitExpression[1].charAt(0);
 		numberTwo = Integer.parseInt(splitExpression[2]);
 	}
 
-	public int  calculate(String[] splitExpression){
-		expression(splitExpression);
+	public int calculate(String[] splitExpression) {
+		splitString(splitExpression);
 		switch (sign) {
 			case '+' :
 				return Math.addExact(numberOne, numberTwo);
