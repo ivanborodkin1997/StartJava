@@ -54,8 +54,8 @@ public class GuessNumber {
         }
         System.out.println(playerOne.getName() + " за игру ввел следующие цифры: " + Arrays.toString(playerOne.getEnteredNum()));
         System.out.println(playerTwo.getName() + " за игру ввел следующие цифры: " + Arrays.toString(playerTwo.getEnteredNum()));
-        playerOne.obnulenie();
-        playerTwo.obnulenie();
+        playerOne.nullify();
+        playerTwo.nullify();
     }
 }
 

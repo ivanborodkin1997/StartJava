@@ -32,7 +32,7 @@ public class Player {
 		enteredNum[index] = number;
 	}
 
-	public void obnulenie(){
+	public void nullify(){
 		 Arrays.fill(enteredNum,0);
 	}
 }
