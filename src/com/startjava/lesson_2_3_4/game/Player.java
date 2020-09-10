@@ -31,4 +31,8 @@ public class Player {
 	public void setEnteredNum(int index, int number) {
 		enteredNum[index] = number;
 	}
+
+	public void obnulenie(){
+		 Arrays.fill(enteredNum,0);
+	}
 }
