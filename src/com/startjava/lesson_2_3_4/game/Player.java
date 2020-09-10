@@ -1,10 +1,11 @@
 package com.startjava.lesson_2_3_4.game;
 
+import java.util.Arrays;
+
 public class Player {
 	private String name;
 	private int number;
-	private int[] saveNumber = new int[10];
-
+	private int[] enteredNum = new int[10];
 
 	public Player(String name) {
 
@@ -15,10 +16,6 @@ public class Player {
 		return name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public int getNumber() {
 		return number;
 	}
@@ -27,12 +24,11 @@ public class Player {
 		this.number = number;
 	}
 
-	public int [] getSaveNumber() {
-		return saveNumber;
+	public int[] getEnteredNum() {
+		return Arrays.copyOf(enteredNum,enteredNum.length);
 	}
 
-	public void setSaveNumber(int index, int value){
-		saveNumber[index] = value;
+	public void setEnteredNum(int index, int number) {
+		enteredNum[index] = number;
 	}
-
 }
