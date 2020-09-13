@@ -5,10 +5,11 @@ import java.util.Arrays;
 public class Player {
 	private String name;
 	private int number;
-	private int[] enteredNum = new int[10];
+	private int endOfArray;
+	private int[] enteredNums = new int[10];
+
 
 	public Player(String name) {
-
 		this.name = name;
 	}
 
@@ -24,15 +25,19 @@ public class Player {
 		this.number = number;
 	}
 
-	public int[] getEnteredNum() {
-		return Arrays.copyOf(enteredNum,enteredNum.length);
+	public void setEndOfArray(int endOfArray){
+		this.endOfArray = endOfArray;
 	}
 
-	public void setEnteredNum(int index, int number) {
-		enteredNum[index] = number;
+	public int[] getEnteredNums() {
+		return Arrays.copyOf(enteredNums,endOfArray+1);
+	}
+
+	public void setEnteredNums(int index, int number) {
+		enteredNums[index] = number;
 	}
 
 	public void nullify(){
-		 Arrays.fill(enteredNum,0);
+		 Arrays.fill(getEnteredNums(),0);
 	}
 }

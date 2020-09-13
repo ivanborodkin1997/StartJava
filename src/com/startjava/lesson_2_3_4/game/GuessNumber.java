@@ -15,10 +15,11 @@ public class GuessNumber {
     }
 
     public void play() {
-            for (int i = 0;  i <  10; i++) {
+            for (int i = 0;  i < 10; i++) {
                     System.out.print(playerOne.getName() + " введите число: ");
                     playerOne.setNumber(scanner.nextInt());
-                    playerOne.setEnteredNum(i, playerOne.getNumber());
+                    playerOne.setEnteredNums(i, playerOne.getNumber());
+                    playerOne.setEndOfArray(i);
                     if (computerNumber > playerOne.getNumber()) {
                         System.out.println("Упс, " + playerOne.getName() + " ваше число слишком маленькое... Попробуйте ввести число побольше!");
                     } else if (computerNumber < playerOne.getNumber()) {
@@ -30,7 +31,8 @@ public class GuessNumber {
 
                     System.out.print(playerTwo.getName() + " введите число: ");
                     playerTwo.setNumber(scanner.nextInt());
-                    playerTwo.setEnteredNum(i, playerTwo.getNumber());
+                    playerTwo.setEnteredNums(i, playerTwo.getNumber());
+                    playerTwo.setEndOfArray(i);
                     if (computerNumber > playerTwo.getNumber()) {
                         System.out.println("Упс," + playerTwo.getName() + " ваше число слишком маленькое... Попробуйте ввести число побольше!");
                     } else if (computerNumber < playerTwo.getNumber()) {
@@ -41,6 +43,7 @@ public class GuessNumber {
                     }
             }
             showResult(computerNumber, playerOne, playerTwo);
+
     }
 
     public void showResult(int computerNumber, Player playerOne, Player playerTwo){
@@ -52,8 +55,8 @@ public class GuessNumber {
             System.out.println("У игрока " + playerOne.getName() + " кончились попытки. Вы проиграли(");
             System.out.println("У игрока " + playerTwo.getName() + " кончились попытки. Вы проиграли(");
         }
-        System.out.println(playerOne.getName() + " за игру ввел следующие цифры: " + Arrays.toString(playerOne.getEnteredNum()));
-        System.out.println(playerTwo.getName() + " за игру ввел следующие цифры: " + Arrays.toString(playerTwo.getEnteredNum()));
+        System.out.println(playerOne.getName() + " за игру ввел следующие цифры: " + Arrays.toString(playerOne.getEnteredNums()));
+        System.out.println(playerTwo.getName() + " за игру ввел следующие цифры: " + Arrays.toString(playerTwo.getEnteredNums()));
         playerOne.nullify();
         playerTwo.nullify();
     }
