@@ -26,6 +26,7 @@ public class GuessNumber {
                         System.out.println("Упс, " + playerOne.getName() + " ваше число слишком большое... Попробуйте ввести число поменьше!");
                     } else if (computerNumber == playerOne.getNumber()) {
                         System.out.println("Ура!!! " + playerOne.getName() + " угадал число " + playerOne.getNumber() + " с " + ++i + " попытки");
+                        System.out.println("Простите " + playerTwo.getName() + " вы проиграли. Игрок " + playerOne.getName() + " угадал число первым!");
                         break;
                     }
 
@@ -39,26 +40,22 @@ public class GuessNumber {
                         System.out.println("Упс, " + playerTwo.getName() + " ваше число слишком большое... Попробуйте ввести число поменьше!");
                     } else if (computerNumber == playerTwo.getNumber()) {
                         System.out.println("Ура!!! " + playerTwo.getName() + "  угадал число " + playerTwo.getNumber() + " с " + ++i + " попытки");
+                        System.out.println("Простите " + playerOne.getName() + " вы проиграли. Игрок " + playerTwo.getName() + " угадал число первым!");
                         break;
                     }
             }
-            showResult(computerNumber, playerOne, playerTwo);
-
+            showResult(playerOne, playerTwo);
     }
 
-    public void showResult(int computerNumber, Player playerOne, Player playerTwo){
-        if(computerNumber == playerOne.getNumber() || computerNumber != playerTwo.getNumber()){
-            System.out.println("Простите " + playerTwo.getName() + " вы проиграли. Игрок " + playerOne.getName() + " угадал число первым!");
-        } else if(computerNumber != playerOne.getNumber() || computerNumber == playerTwo.getNumber()) {
-            System.out.println("Простите " + playerOne.getName() + " вы проиграли. Игрок " + playerTwo.getName() + " угадал число первым!");
-        } else if(computerNumber != playerOne.getNumber() && computerNumber != playerTwo.getNumber()) {
-            System.out.println("У игрока " + playerOne.getName() + " кончились попытки. Вы проиграли(");
-            System.out.println("У игрока " + playerTwo.getName() + " кончились попытки. Вы проиграли(");
-        }
-        System.out.println(playerOne.getName() + " за игру ввел следующие цифры: " + Arrays.toString(playerOne.getEnteredNums()));
-        System.out.println(playerTwo.getName() + " за игру ввел следующие цифры: " + Arrays.toString(playerTwo.getEnteredNums()));
-        playerOne.nullify();
-        playerTwo.nullify();
+    public void showResult(Player playerOne, Player playerTwo) {
+            if(computerNumber != playerOne.getNumber() && computerNumber != playerTwo.getNumber()) {
+            System.out.println("У игрока " + playerOne.getName() + " закончились попытки!");
+            System.out.println("У игрока " + playerTwo.getName() + " закончились попытки!");
+            }
+            System.out.println(playerOne.getName() + " за игру ввел следующие цифры: " + Arrays.toString(playerOne.getEnteredNums()));
+            System.out.println(playerTwo.getName() + " за игру ввел следующие цифры: " + Arrays.toString(playerTwo.getEnteredNums()));
+            playerOne.nullify();
+            playerTwo.nullify();
     }
 }
 
