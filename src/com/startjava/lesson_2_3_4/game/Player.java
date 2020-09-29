@@ -41,6 +41,6 @@ public class Player {
 	}
 
 	public void nullify(){
-		 Arrays.fill(enteredNums,0);
+		 Arrays.fill(enteredNums,0,attempt + 1, 0);
 	}
 }
