@@ -13,62 +13,60 @@ public class GuessNumber {
         this.playerTwo = playerTwo;
     }
 
-    public void inputNumber(Player player) {
-            System.out.print(player.getName() + " введите число: ");
-            player.setNumber(scanner.nextInt());
+    public void play() {
+        for (int i = 0; i < 10; i++) {
+            inputNumber(playerOne, i);
+            if (computerNumber == playerOne.getNumber()) {
+                break;
+            }
+            inputNumber(playerTwo, i);
+            if (computerNumber == playerTwo.getNumber()) {
+                break;
+            }
+        }
+        checkAttepts(playerOne);
+        checkAttepts(playerTwo);
     }
 
-        public void play () {
+    public void inputNumber(Player player, int i) {
+        System.out.print(player.getName() + " введите число: ");
+        player.setNumber(scanner.nextInt());
+        player.setEnteredNum(i, player.getNumber());
+        player.setAttempt(i);
+        checkNumber(player);
+    }
 
-            for (int i = 0; i < 10; i++) {
-                inputNumber(playerOne);
-                playerOne.setEnteredNum(i, playerOne.getNumber());
-                playerOne.setAttempt(i);
-                if (computerNumber > playerOne.getNumber()) {
-                    System.out.println("Упс, " + playerOne.getName() + " ваше число слишком маленькое... Попробуйте ввести число побольше!");
-                } else if (computerNumber < playerOne.getNumber()) {
-                    System.out.println("Упс, " + playerOne.getName() + " ваше число слишком большое... Попробуйте ввести число поменьше!");
-                } else if (computerNumber == playerOne.getNumber()) {
-                    System.out.println("Ура!!! " + playerOne.getName() + " угадал число " + playerOne.getNumber() + " с " + (playerOne.getAttept() + 1) + " попытки");
-                    break;
-                }
-                inputNumber(playerTwo);
-                playerTwo.setEnteredNum(i, playerTwo.getNumber());
-                playerTwo.setAttempt(i);
-                if (computerNumber > playerTwo.getNumber()) {
-                    System.out.println("Упс, " + playerTwo.getName() + " ваше число слишком маленькое... Попробуйте ввести число побольше!");
-                } else if (computerNumber < playerTwo.getNumber()) {
-                    System.out.println("Упс, " + playerTwo.getName() + " ваше число слишком большое... Попробуйте ввести число поменьше!");
-                } else if (computerNumber == playerTwo.getNumber()) {
-                    System.out.println("Ура!!! " + playerTwo.getName() + " угадал число " + playerTwo.getNumber() + " с " + (playerTwo.getAttept() + 1) + " попытки");
-                    break;
-                }
-            }
-            show(playerOne);
-            show(playerTwo);
-        }
-
-        public void show (Player player){
-            if (computerNumber != player.getNumber()) {
-                showEndAttept(player);
-            }
-            showResult(player);
-        }
-
-        public void showResult (Player player){
-            System.out.print(player.getName() + " за игру ввел следующие цифры: ");
-            for (int i : player.getEnteredNums()) {
-                System.out.print(i + " ");
-            }
-            System.out.println();
-            zeroing(player);
-        }
-
-        public void zeroing(Player player){
-            player.nullify();
-        }
-
-        public void showEndAttept (Player player){
-            System.out.println("У игрока " + player.getName() + " закончились попытки!");
+    public void checkNumber (Player player) {
+        if (computerNumber > player.getNumber()) {
+            System.out.println("Упс, " + player.getName() + " ваше число слишком маленькое... Попробуйте ввести число побольше!");
+        } else if (computerNumber < player.getNumber()) {
+            System.out.println("Упс, " + player.getName() + " ваше число слишком большое... Попробуйте ввести число поменьше!");
+        } else if (computerNumber == player.getNumber()) {
+            System.out.println("Ура!!! " + player.getName() + " угадал число " + player.getNumber() + " с " + (player.getAttept() + 1) + " попытки");
         }
     }
+
+    public void checkAttepts (Player player) {
+        if (computerNumber != player.getNumber()) {
+            showEndAttept(player);
+        }
+        showResult(player);
+    }
+
+    public void showResult (Player player) {
+        System.out.print(player.getName() + " за игру ввел следующие цифры: ");
+        for (int i : player.getEnteredNums()) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+        zeroOutArray(player);
+    }
+
+    public void zeroOutArray (Player player) {
+        player.nullify();
+    }
+
+    public void showEndAttept (Player player) {
+        System.out.println("У игрока " + player.getName() + " закончились попытки!");
+    }
+}
