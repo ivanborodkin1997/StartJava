@@ -14,29 +14,40 @@ public class GuessNumber {
     }
 
     public void play() {
+        makeMove(playerOne,playerTwo);
+        showResult(playerOne);
+        showResult(playerTwo);
+    }
+
+    private boolean makeMove (Player playerOne, Player playerTwo) {
         for (int i = 0; i < 10; i++) {
             inputNumber(playerOne, i);
-            if (checkNumber(playerOne) == true) {
+            if (checkNumber(playerOne)) {
                 break;
             }
             inputNumber(playerTwo, i);
-            if (checkNumber(playerTwo) == true) {
+            if (checkNumber(playerTwo)) {
                 break;
             }
 
         }
-        checkAttepts(playerOne);
-        checkAttepts(playerTwo);
+        if (computerNumber != playerOne.getNumber()) {
+            System.out.println("У игрока " + playerOne.getName() + " закончились попытки!");
+        }
+        if (computerNumber != playerTwo.getNumber()) {
+            System.out.println("У игрока " + playerTwo.getName() + " закончились попытки!");
+        }
+        return true;
     }
 
-    public void inputNumber(Player player, int i) {
+    private void inputNumber(Player player, int i) {
         System.out.print(player.getName() + " введите число: ");
         player.setNumber(scanner.nextInt());
         player.setEnteredNum(i, player.getNumber());
         player.setAttempt(i);
     }
 
-    public boolean checkNumber(Player player) {
+    private boolean checkNumber(Player player) {
         if (computerNumber == player.getNumber()) {
             System.out.println("Ура!!! " + player.getName() + " угадал число " + player.getNumber() + " с " + (player.getAttept() + 1) + " попытки");
             return true;
@@ -46,14 +57,7 @@ public class GuessNumber {
         return false;
     }
 
-    public void checkAttepts(Player player) {
-        if (computerNumber != player.getNumber()) {
-            System.out.println("У игрока " + player.getName() + " закончились попытки!");
-        }
-        showResult(player);
-    }
-
-    public void showResult(Player player) {
+    private void showResult(Player player) {
         System.out.print(player.getName() + " за игру ввел следующие цифры: ");
         for (int num : player.getEnteredNums()) {
             System.out.print(num + " ");
