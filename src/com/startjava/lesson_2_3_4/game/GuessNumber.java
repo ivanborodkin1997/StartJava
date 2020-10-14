@@ -14,30 +14,17 @@ public class GuessNumber {
     }
 
     public void play() {
-        makeMove(playerOne,playerTwo);
-        showResult(playerOne);
-        showResult(playerTwo);
+        for (int i = 0; i < 10; i++) {
+            if(makeMove(playerOne, i))
+                return;
+            if(makeMove(playerTwo, i))
+                return;
+        }
     }
 
-    private boolean makeMove (Player playerOne, Player playerTwo) {
-        for (int i = 0; i < 10; i++) {
-            inputNumber(playerOne, i);
-            if (checkNumber(playerOne)) {
-                break;
-            }
-            inputNumber(playerTwo, i);
-            if (checkNumber(playerTwo)) {
-                break;
-            }
-
-        }
-        if (computerNumber != playerOne.getNumber()) {
-            System.out.println("У игрока " + playerOne.getName() + " закончились попытки!");
-        }
-        if (computerNumber != playerTwo.getNumber()) {
-            System.out.println("У игрока " + playerTwo.getName() + " закончились попытки!");
-        }
-        return true;
+    private boolean makeMove (Player player,  int i) {
+            inputNumber(player, i);
+            return checkNumber(player);
     }
 
     private void inputNumber(Player player, int i) {
@@ -50,6 +37,14 @@ public class GuessNumber {
     private boolean checkNumber(Player player) {
         if (computerNumber == player.getNumber()) {
             System.out.println("Ура!!! " + player.getName() + " угадал число " + player.getNumber() + " с " + (player.getAttept() + 1) + " попытки");
+           /* if (computerNumber != playerOne.getNumber()) {
+                System.out.println("У игрока " + playerOne.getName() + " закончились попытки!");
+            }
+            if (computerNumber != playerTwo.getNumber()) {
+                System.out.println("У игрока " + playerTwo.getName() + " закончились попытки!");
+            }*/
+            showResult(playerOne);
+            showResult(playerTwo);
             return true;
         }
         String resultAnswer = (computerNumber > player.getNumber()) ? "маленькое... Попробуйте ввести число побольше!" : "большое... Попробуйте ввести число поменьше!";
