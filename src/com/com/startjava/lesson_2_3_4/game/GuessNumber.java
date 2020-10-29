@@ -1,4 +1,4 @@
-package startjava.lesson_2_3_4.game;
+package com.startjava.lesson_2_3_4.game;
 
 import java.util.Scanner;
 
@@ -15,19 +15,16 @@ public class GuessNumber {
 
     public void play() {
         for (int i = 0; i < 10; i++) {
-            if(makeMove(playerOne, i))
-                break;
-            if(makeMove(playerTwo, i))
-                break;
+            if (makeMove(playerOne, i))
+                return;
+            if (makeMove(playerTwo, i))
+                return;
         }
         showResult(playerOne);
-        System.out.println();
         showResult(playerTwo);
-        playerOne.nullify();
-        playerTwo.nullify();
     }
 
-    private boolean makeMove (Player player,  int i) {
+    private boolean makeMove(Player player, int i) {
         inputNumber(player, i);
         return checkNumber(player);
     }
@@ -42,6 +39,12 @@ public class GuessNumber {
     private boolean checkNumber(Player player) {
         if (computerNumber == player.getNumber()) {
             System.out.println("Ура!!! " + player.getName() + " угадал число " + player.getNumber() + " с " + (player.getAttempt() + 1) + " попытки");
+           /* if (computerNumber != playerOne.getNumber()) {
+                System.out.println("У игрока " + playerOne.getName() + " закончились попытки!");
+            }
+            if (computerNumber != playerTwo.getNumber()) {
+                System.out.println("У игрока " + playerTwo.getName() + " закончились попытки!");
+            }*/
             return true;
         }
         String resultAnswer = (computerNumber > player.getNumber()) ? "маленькое... Попробуйте ввести число побольше!" : "большое... Попробуйте ввести число поменьше!";
@@ -50,14 +53,11 @@ public class GuessNumber {
     }
 
     private void showResult(Player player) {
-        if (computerNumber != player.getNumber()) {
-            System.out.println("У игрока " + player.getName() + " закончились попытки!");
-        }
         System.out.print(player.getName() + " за игру ввел следующие цифры: ");
         for (int num : player.getEnteredNums()) {
             System.out.print(num + " ");
-
         }
+        System.out.println();
+        player.nullify();
     }
 }
-
