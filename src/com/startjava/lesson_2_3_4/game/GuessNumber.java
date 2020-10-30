@@ -29,7 +29,7 @@ public class GuessNumber {
 
     private boolean makeMove (Player player,  int i) {
         inputNumber(player, i);
-        return checkNumber(player);
+        return checkNumber(player,i);
     }
 
     private void inputNumber(Player player, int i) {
@@ -39,20 +39,20 @@ public class GuessNumber {
         player.setAttempt(i);
     }
 
-    private boolean checkNumber(Player player) {
+    private boolean checkNumber(Player player, int i) {
         if (computerNumber == player.getNumber()) {
             System.out.println("Ура!!! " + player.getName() + " угадал число " + player.getNumber() + " с " + (player.getAttempt() + 1) + " попытки");
             return true;
         }
         String resultAnswer = (computerNumber > player.getNumber()) ? "маленькое... Попробуйте ввести число побольше!" : "большое... Попробуйте ввести число поменьше!";
         System.out.println("Упс, " + player.getName() + " ваше число слишком " + resultAnswer);
+        if (i == 9) {
+            System.out.println("У игрока " + player.getName() + " закончились попытки!");
+        }
         return false;
     }
 
     private void showResult(Player player) {
-        if (computerNumber != player.getNumber()) {
-            System.out.println("У игрока " + player.getName() + " закончились попытки!");
-        }
         System.out.print(player.getName() + " за игру ввел следующие цифры: ");
         for (int num : player.getEnteredNums()) {
             System.out.print(num + " ");
