@@ -1,6 +1,6 @@
 -- init datebase
 
-INSERT INTO Jeagers(modelName, mark, height, weight, status, origin, launch, kaijuKill)
+INSERT INTO Jeagers(modelName, mark, height, weight, status, origin, kaijuKill, launch)
 	VALUES
 	    ('Crimson Typhoon','4','76.2','1.7','Distroyed','China','7','2018-08-22),
 	    ('Gipsy Danger','3','79.25','1.98','Distroyed','USA','9','2017-07-10'),
