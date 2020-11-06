@@ -9,7 +9,7 @@ INSERT INTO Jeagers(modelName, mark, height, weight, status, origin, launch, kai
 	    ('Gipsy Avenger','6','81.8','2','Distroyed','USA','1','2034-01-12'),
 	    ('Brawler Yukon','1','77.6','1.8','Distroyed','USA','2','2015-01-30'),
 	    ('Tacit Ronin','1','74.4','7.5','Distroyed','Japan','3','2015-12-06'),
-	    ('Coyote Tango','1','83.3','2.3','Distroyed','Japan','2','2015-12-303'),
+	    ('Coyote Tango','1','83.3','2.3','Distroyed','Japan','2','2015-12-30'),
 	    ('Horizon Brave','1','72.5','7.9','Distroyed','China','2','2015-12-12'),
 	    ('Romeo Blue','1','77.7','7.8','Distroyed','USA','2','2015-12-15');
 
