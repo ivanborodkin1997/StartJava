@@ -2,7 +2,7 @@
 
 INSERT INTO Jeagers(modelName, mark, height, weight, status, origin, launch, kaijuKill)
 	VALUES
-	    ('Crimson Typhoon','4','76.2','1.7','Distroyed','China','7','2018-80-22),
+	    ('Crimson Typhoon','4','76.2','1.7','Distroyed','China','7','2018-08-22),
 	    ('Gipsy Danger','3','79.25','1.98','Distroyed','USA','9','2017-07-10'),
 	    ('Striker Eureka','5','76.2','1.85','Distroyed','Australia','11','2019-11-02'),
 	    ('Chreno Alpha','1','85.34','2.4','Distroyed','Russia','6','2015-12-25),
