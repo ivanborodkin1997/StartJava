@@ -1,10 +1,10 @@
 --queries
 
-SELECT * FROM Jeagers ORDER BY id; --вывод всей таблицы, в порядке возрастания id
+SELECT * FROM Jeagers; --вывод всей таблицы
 
 SELECT * FROM Jeagers WHERE status = 'Active'; --отображение только не уничтоженных роботов
 
-SELECT * FROM Jeagers WHERE mark IN ('1','6') ORDER BY id; --отображение роботов нескольких серий (Mark-1,6)
+SELECT * FROM Jeagers WHERE mark IN ('1','6'); --отображение роботов нескольких серий (Mark-1,6)
 
 SELECT * FROM Jeagers ORDER BY mark DESC; --отсортированная таблицы по убыванию по столбцу mark
 
